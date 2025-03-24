@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #tarjeta-jugador{
+        background-color: lightblue;
+        text-align: center;
+        border-color: 2px solid blue;
+        box-shadow: 5px 5px 5px black ;
+        border-radius: 5px;
+        margin: 5px;
+        width: 200px;
+        padding: 30px;
+    }
+    #contenedor-jugadores{
+        display: flex;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="contenedor-jugadores">
+
+    </div>
+    <script>
+        //let alineacion=['Figo','Zidane','Raúl','Morientes','Casillas']
+        //let fragment = document.createDocumentFragment();
+
+        /*for ( jugador of alineacion){
+
+            let itemJugador=document.createElement('div');
+            itemJugador.setAttribute("id","tarjeta-jugador");
+            itemJugador.textContent=jugador;
+            fragment.appendChild(itemJugador);
+        }
+        document.getElementById("contenedor-jugadores").appendChild(fragment);*/
+        
+        let figo={nombre:'Figo',
+        archivo:'figo.jpg',
+        edad:58,
+        activo:false,
+        fortuna:10000000000,
+        equipos:['Barcelona','Real Madrid'],
+        direcion:{calle:'Norte',
+                numero:23, 
+                localidad:'Madrid'}
+        }
+        alert("Nombre "+figo.nombre+" Edad: "+figo.edad+" localidad: "+figo.direcion.localidad)
+        let alineacion=[
+        {nombre:'Figo',archivo:'figo.jpeg'},
+        {nombre:'Zidane',archivo:'zidane.jpeg'},
+        {nombre:'Rául',archivo:'raul.jpeg'},
+        {nombre:'Morientes',archivo:'morientes.jpeg'},
+        {nombre:'Casillas',archivo:'casillas.jpeg'}
+
+        ]
+        for ( jugador of alineacion){
+
+        let itemJugador=document.createElement('div');
+        itemJugador.setAttribute("id","tarjeta-jugador");
+        let nombreJugador=document.createElement('p');
+        nombreJugador.textContent=jugador.nombre;
+        let imagenJugador=document.createElement('img');
+        imagenJugador.setAttribute("src",jugador.archivo)
+        itemJugador.appendChild(nombreJugador);
+        itemJugador.appendChild(imagenJugador);
+        
+        
+        document.getElementById("contenedor-jugadores").appendChild(itemJugador);
+        }
+        //document.getElementById("contenedor-jugadores").appendChild(fragment);
+  </script>
+</body>
+</html>
